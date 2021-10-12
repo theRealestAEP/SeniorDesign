@@ -8,3 +8,5 @@ go build -o <'name of project'>
 
 # Change Log
 - 10/11/2021: set up tests for inputing io from files and looking at specific bytes. Setup Make files
+
+# Dependencies
