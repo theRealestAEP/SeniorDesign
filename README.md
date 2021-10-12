@@ -7,6 +7,6 @@ go build -o <'name of project'>
 ### For the Test Executables
 
 # Change Log
-- 10/11/2021: set up tests for inputing io from files and looking at specific bytes. Setup Make files
+- 10/11/2021: set up tests for inputing io from files and looking at PE file headers. Setup Make files
 
 # Dependencies

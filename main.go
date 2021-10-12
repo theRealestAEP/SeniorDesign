@@ -27,14 +27,14 @@ func main() {
 		os.Exit(1)
 	}
 
-	file := ioReader(os.Args[1])
-	f, err := pe.NewFile(file)
-	check(err)
+	file := ioReader(os.Args[1]) //read in fie from arg
+	f, err := pe.NewFile(file)   //define f as a PE file
+	check(err)                   //error handling
 
-	var sizeofOptionalHeader32 = uint16(binary.Size(pe.OptionalHeader32{}))
-	var sizeofOptionalHeader64 = uint16(binary.Size(pe.OptionalHeader64{}))
+	var sizeofOptionalHeader32 = uint16(binary.Size(pe.OptionalHeader32{})) //if 32 bit
+	var sizeofOptionalHeader64 = uint16(binary.Size(pe.OptionalHeader64{})) // if 64 bit
 
-	var dosheader [96]byte
+	var dosheader [96]byte //byte array size of 96
 	var sign [4]byte
 	file.ReadAt(dosheader[0:], 0)
 	var base int64
