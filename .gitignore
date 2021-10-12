@@ -1,3 +1,2 @@
-tests/testWindowsProrgams/testEXE32.exe
-tests/testWindowsProrgams/testEXE64.exe
+tests/testWindowsPrograms/*.exe
 MDE
