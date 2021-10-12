@@ -7,4 +7,4 @@ go build -o <'name of project'>
 ### For the Test Executables
 
 # Change Log
-- 10/11/2021: set up tests for inputing io from files and looking at specific bytes | todo: setup make file and work on byte processing
+- 10/11/2021: set up tests for inputing io from files and looking at specific bytes. Setup Make files
