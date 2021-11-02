@@ -2,23 +2,35 @@ package main
 
 import (
 	"fmt"
+	"io"
+	"io/ioutil"
 	"math"
+	"os"
 )
 
+func ioReader(file string) io.ReaderAt {
+	r, _ := os.Open(file)
+	return r
+}
+
 func main() {
-	fmt.Println("Usage: ENT [TargetFile]")
 
-	sample := "AAAAABBBadfsdfasfasdfasq2e234132BBBB"
+	if len(os.Args) < 2 {
+		fmt.Println("Usage: ENT file_toCompare")
+		os.Exit(1)
+	}
 
-	// sample2 := "AAAAAAAAAAAABBBBBBBBBBBBBBBBBBCCCCCCCCCCCCCC"
+	buf, _ := ioutil.ReadFile(os.Args[1]) //read in fie from arg
 
-	bits := Shannon(sample)
+	file := string(buf)
 
-	fmt.Println(bits)
+	bits := Shannon(file)
 
-	ratio_test_1 := bits / len(sample) //set the ratio of bits to length to normalize entropy
+	fmt.Printf("total number of bits: %d\n", bits)
 
-	fmt.Println(ratio_test_1)
+	var ratio_test_1 int = bits / len(file) //set the ratio of bits to length to normalize entropy
+
+	fmt.Printf("shanon entropy ratio: %d\n", ratio_test_1)
 
 }
 
