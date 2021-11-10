@@ -1,0 +1,71 @@
+<<<<<<< HEAD
+Data Time: 11/9/2021 12:39:49 AM --> NO other Instance is not running so, launching UI
+Data Time: 11/9/2021 12:39:49 AM --> It's a admin group
+Data Time: 11/9/2021 12:39:49 AM --> SilentUpdate - []
+Data Time: 11/9/2021 12:39:49 AM --> Before Suite Start
+Data Time: 11/9/2021 12:39:49 AM --> InitializeComponent
+Data Time: 11/9/2021 12:39:49 AM --> Exception @ Instance [System.TypeInitializationException: The type initializer for 'RemotePCSuite.CodecJson' threw an exception. ---> System.ArgumentOutOfRangeException: Length cannot be less than zero.
+Parameter name: length
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at RemotePCSuite.CodecJson..cctor()
+   --- End of inner exception stack trace ---
+   at RemotePCSuite.CodecJson.get_Instance()]
+Data Time: 11/9/2021 12:39:49 AM --> Exception @ StartProcess [ System.TypeInitializationException: The type initializer for 'RemotePCSuite.CodecJson' threw an exception. ---> System.ArgumentOutOfRangeException: Length cannot be less than zero.
+Parameter name: length
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at RemotePCSuite.CodecJson..cctor()
+   --- End of inner exception stack trace ---
+   at RemotePCSuite.CodecJson.get_Instance()
+   at RemotePCSuite.RemotePCSuit..ctor()
+   at RemotePCSuite.App.StartProcess(StartupEventArgs e, Mutex mutex)]
+Data Time: 11/9/2021 12:39:49 AM --> After Suite Start
+Data Time: 11/9/2021 12:39:49 AM --> Application_DispatcherUnhandledException [System.NullReferenceException: Object reference not set to an instance of an object.
+   at RemotePCSuite.App.StartProcess(StartupEventArgs e, Mutex mutex)
+   at RemotePCSuite.App.Application_Startup(Object sender, StartupEventArgs e)
+   at System.Windows.Application.OnStartup(StartupEventArgs e)
+   at System.Windows.Application.<.ctor>b__1_0(Object unused)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)]
+Data Time: 11/9/2021 12:39:49 AM --> Application Unhandled exception  [System.NullReferenceException: Object reference not set to an instance of an object.
+   at RemotePCSuite.App.StartProcess(StartupEventArgs e, Mutex mutex)
+   at RemotePCSuite.App.Application_Startup(Object sender, StartupEventArgs e)
+   at System.Windows.Application.OnStartup(StartupEventArgs e)
+   at System.Windows.Application.<.ctor>b__1_0(Object unused)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)]
+=======
+Data Time: 11/9/2021 12:39:49 AM --> NO other Instance is not running so, launching UI
+Data Time: 11/9/2021 12:39:49 AM --> It's a admin group
+Data Time: 11/9/2021 12:39:49 AM --> SilentUpdate - []
+Data Time: 11/9/2021 12:39:49 AM --> Before Suite Start
+Data Time: 11/9/2021 12:39:49 AM --> InitializeComponent
+Data Time: 11/9/2021 12:39:49 AM --> Exception @ Instance [System.TypeInitializationException: The type initializer for 'RemotePCSuite.CodecJson' threw an exception. ---> System.ArgumentOutOfRangeException: Length cannot be less than zero.
+Parameter name: length
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at RemotePCSuite.CodecJson..cctor()
+   --- End of inner exception stack trace ---
+   at RemotePCSuite.CodecJson.get_Instance()]
+Data Time: 11/9/2021 12:39:49 AM --> Exception @ StartProcess [ System.TypeInitializationException: The type initializer for 'RemotePCSuite.CodecJson' threw an exception. ---> System.ArgumentOutOfRangeException: Length cannot be less than zero.
+Parameter name: length
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at RemotePCSuite.CodecJson..cctor()
+   --- End of inner exception stack trace ---
+   at RemotePCSuite.CodecJson.get_Instance()
+   at RemotePCSuite.RemotePCSuit..ctor()
+   at RemotePCSuite.App.StartProcess(StartupEventArgs e, Mutex mutex)]
+Data Time: 11/9/2021 12:39:49 AM --> After Suite Start
+Data Time: 11/9/2021 12:39:49 AM --> Application_DispatcherUnhandledException [System.NullReferenceException: Object reference not set to an instance of an object.
+   at RemotePCSuite.App.StartProcess(StartupEventArgs e, Mutex mutex)
+   at RemotePCSuite.App.Application_Startup(Object sender, StartupEventArgs e)
+   at System.Windows.Application.OnStartup(StartupEventArgs e)
+   at System.Windows.Application.<.ctor>b__1_0(Object unused)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)]
+Data Time: 11/9/2021 12:39:49 AM --> Application Unhandled exception  [System.NullReferenceException: Object reference not set to an instance of an object.
+   at RemotePCSuite.App.StartProcess(StartupEventArgs e, Mutex mutex)
+   at RemotePCSuite.App.Application_Startup(Object sender, StartupEventArgs e)
+   at System.Windows.Application.OnStartup(StartupEventArgs e)
+   at System.Windows.Application.<.ctor>b__1_0(Object unused)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)]
+>>>>>>> main
