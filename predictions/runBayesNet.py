@@ -1,6 +1,28 @@
 import os
+import sys
 
-os.system("java -cp \"./weka.jar\" weka.classifiers.bayes.BayesNet -T partialTestSet.arff -l partialBayesNet.model -p 0 -c 2 > prediction.txt")
+dataFile = "partialTestSet.arff"
+
+if(len(sys.argv) > 1):
+    dataFile = sys.argv[1]
+
+print(dataFile)
+if(os.path.exists("./" + dataFile)):
+    print("exists!")
+else:
+    print("problem: file doesn't exist in given directory")
+    exit(1)
+
+#create .arff file from a given .csv
+if(dataFile[-3:-1] + dataFile[-1] == "csv"):
+    print("given a .csv, converting to .arff")
+    arffFile = dataFile[0:-4] + ".arff"
+    os.system("java -cp \"./weka.jar\" weka.core.converters.CSVLoader " + dataFile + " > " + arffFile + " -B 1000")
+    dataFile = arffFile
+
+#run model on generated .arff
+os.system("java -cp \"./weka.jar\" weka.classifiers.bayes.BayesNet -T " + dataFile + " -l partialBayesNet.model -p 0 -c 2 > prediction.txt")
+
 # open the sample file used
 file = open('prediction.txt')
   
