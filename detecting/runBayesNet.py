@@ -30,24 +30,12 @@ file = open('prediction.txt')
 content = file.readlines()
 
 #read prediction of single instance
-val = content[5][30]
+dataPoint = content[5]
 
-val2 = content[41][34]
-
-numErrors = 0
-numInstances = len(content) - 6
-for i in range(5,len(content) - 1):
-    val3 = content[i][34]
-    if val3 == "+":
-        numErrors += 1
-
-print(numErrors)
-print("number of errors: ") 
-print(numErrors)
-print("number of instances: ")
-print(numInstances)
-print("accuracy: ")
-print((numInstances - numErrors)/(numInstances))
+if "benign" in dataPoint:
+    print("it is not malware")
+elif "malicious" in dataPoint:
+    print("malicious!")
 
 #print prediction
 #if(int(val) == 0):
