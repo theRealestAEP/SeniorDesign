@@ -40,7 +40,7 @@ if(dataFile[-3:-1] + dataFile[-1] == "csv"):
     generated.writelines("\n")
 
     #write arff content to generated
-    generated.writelines(arffContent[4097].replace("FALSE","false"))
+    generated.writelines(arffContent[4096])
     generated.close()
     generatedWriteable = open("generated.arff")
     generatedContent = generatedWriteable.readlines()
@@ -56,7 +56,7 @@ if(dataFile[-3:-1] + dataFile[-1] == "csv"):
     arffWriteable.close()
 
 #run model on generated .arff
-os.system("java -cp \"./weka.jar\" weka.classifiers.bayes.BayesNet -T " + dataFile + " -l bayesNet.model -p 0 -c 2 > prediction.txt")
+os.system("java -cp \"./weka.jar\" weka.classifiers.bayes.BayesNet -T " + dataFile + " -l bayesNet.model -p 0 -c 1 > prediction.txt")
 
 # open the sample file used
 file = open('prediction.txt')
