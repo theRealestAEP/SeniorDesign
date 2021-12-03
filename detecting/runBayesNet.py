@@ -3,8 +3,12 @@ import sys
 
 dataFile = "partialTestSet.arff"
 
+#check if there is an argument given THERE NEEDS TO BE ONE
 if(len(sys.argv) > 1):
     dataFile = sys.argv[1]
+else:
+    print("error: no argument given")
+    exit(1)
 
 print(dataFile)
 if(os.path.exists("./" + dataFile)):
@@ -36,18 +40,20 @@ if(dataFile[-3:-1] + dataFile[-1] == "csv"):
     generated.writelines("\n")
 
     #write arff content to generated
-    generated.writelines(arffContent[4097:])
-    print("WHY PARSE" + arffContent[4097])
+    generated.writelines(arffContent[4097].replace("FALSE","false"))
     generated.close()
     generatedWriteable = open("generated.arff")
     generatedContent = generatedWriteable.readlines()
 
     #convert arff file to generated
     arffWriteable = open("flamingo.txt", "w")
-    arffWriteable.writelines(generatedWriteable)
-
+    arffWriteable.writelines(generatedContent)
+    
     #remove generated
-    #os.remove("generated.arff")
+    os.remove("generated.arff")
+    os.remove(arffFile)
+    os.rename("flamingo.txt",arffFile)
+    arffWriteable.close()
 
 #run model on generated .arff
 os.system("java -cp \"./weka.jar\" weka.classifiers.bayes.BayesNet -T " + dataFile + " -l bayesNet.model -p 0 -c 2 > prediction.txt")
@@ -59,27 +65,11 @@ file = open('prediction.txt')
 content = file.readlines()
 
 #read prediction of single instance
-val = content[5][30]
+val = content[5]
 
-val2 = content[41][34]
-
-numErrors = 0
-numInstances = len(content) - 6
-for i in range(5,len(content) - 1):
-    val3 = content[i][34]
-    if val3 == "+":
-        numErrors += 1
-
-print(numErrors)
-print("number of errors: ") 
-print(numErrors)
-print("number of instances: ")
-print(numInstances)
-print("accuracy: ")
-print((numInstances - numErrors)/(numInstances))
-
-#print prediction
-#if(int(val) == 0):
-   # print("NOT MALICIOUS")
-#else:
-   # print("MALICIOUS")
+if "malicous" in val:
+    print("MALWARE")
+elif "benign" in val:
+    print("BENIGN")
+else:
+    print("ERROR")
