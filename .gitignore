@@ -1,2 +1,10 @@
 tests/testWindowsPrograms/*.exe
 MDE
+MalwareEngine/Frontend/node_modules
+node_modules
+node_modules/
+MalwareEngine/dataCollection/Malware
+Malware Samples
+MalwareEngine/dataCollection/CleanFiles
+MalwareEngine/Frontend/node_modules/electron/dist/Electron.app/Contents/Frameworks/Electron Framework.framework/Versions/A/Electron Framework
+MalwareEngine/Frontend/node_modules/electron/dist/Electron.app/Contents/Frameworks/Electron
